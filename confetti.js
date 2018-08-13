@@ -1,8 +1,8 @@
 // JavaScript by GeekLaunch (https://www.youtube.com/channel/UCPXyziOUs7oglOtmCPhFSKQ)
 let canvas = document.getElementById('confetti');
 
-canvas.width = 2000;
-canvas.height = 480;
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
 
 let ctx = canvas.getContext('2d');
 let pieces = [];
