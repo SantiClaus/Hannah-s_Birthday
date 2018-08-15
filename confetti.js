@@ -1,8 +1,8 @@
 // JavaScript by GeekLaunch (https://www.youtube.com/channel/UCPXyziOUs7oglOtmCPhFSKQ)
 let canvas = document.getElementById('confetti');
 
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
+canvas.width = window.innerWidth - 4;
+canvas.height = window.innerHeight - 4;
 
 let ctx = canvas.getContext('2d');
 let pieces = [];
@@ -31,7 +31,7 @@ function update () {
 	}
 
 	while (pieces.length < numberOfPieces) {
-		pieces.push(new Piece(Math.random() * canvas.width, -15));
+		pieces.push(new Piece(Math.random() * canvas.width, - 15));
 	}
 
 	lastUpdateTime = now;
