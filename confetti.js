@@ -1,18 +1,24 @@
 // JavaScript by GeekLaunch (https://www.youtube.com/channel/UCPXyziOUs7oglOtmCPhFSKQ)
 let canvas = document.getElementById('confetti');
+let title = document.getElementById('title');
 
 canvas.width = window.innerWidth - 4;
-canvas.height = window.innerHeight - 4;
+canvas.height = window.innerHeight - 60;
 
 let ctx = canvas.getContext('2d');
+let str = 'Happy Birthday Hannah!';
+let img = new Image();
 let pieces = [];
 let numberOfPieces = 200;
 let lastUpdateTime = Date.now();
+ctx.fillStyle = randomColor();
 
 function randomColor () {
-	let colors = ['#f00', '#0f0', '#00f', '#0ff', '#f0f', '#ff0'];
+	let colors = ['red', 'lime', 'blue', 'cyan', 'fuchsia', 'yellow'];
 	return colors[Math.floor(Math.random() * colors.length)];
 }
+
+title.setAttribute('id', randomColor());
 
 function update () {
 	let now = Date.now(),
@@ -39,8 +45,19 @@ function update () {
 	setTimeout(update, 1);
 }
 
+function write () {
+	ctx.font = '50px TimeToParty';
+	ctx.textAlign = 'center';
+	ctx.fillText(str, canvas.width / 2, canvas.height / 4);
+}
+
 function draw () {
 	ctx.clearRect(0, 0, canvas.width, canvas.height);
+	write();
+
+	img.src = 'cake.png';
+	ctx.drawImage(img, 0, 200, canvas.width, canvas.height);
+
 
 	pieces.forEach(function (p) {
 		ctx.save();
@@ -55,7 +72,7 @@ function draw () {
 		ctx.restore();
 	});
 
-	requestAnimationFrame(draw);
+	requestAnimationFrame(draw);	
 }
 
 function Piece (x, y) {

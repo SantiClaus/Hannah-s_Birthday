@@ -1,3 +1,41 @@
 body {
 	margin: 0px;
 }
+
+h1 {
+	margin: 0px;
+	font-family: TimeToParty;
+	font-size: 40px;
+	text-align: center;
+}
+
+p {
+	text-align: center;
+	font-size: 20px;
+	max-width: 50%;
+	display: block;
+	margin: auto;
+}
+
+#yellow  {
+	color: yellow;
+}
+#red {
+	color: red;
+}
+
+#lime {
+	color: lime;
+}
+
+#blue {
+	color: blue;
+}
+
+#cyan {
+	color: cyan;
+}
+
+#fuchsia {
+	color: fuchsia;
+}
